@@ -1,4 +1,4 @@
-(defproject etaoin "0.2.9"
+(defproject etaoin "0.2.11-SNAPSHOT"
   :description "Pure Clojure Webdriver protocol implementation."
   :url "https://github.com/igrishaev/etaoin"
   :license {:name "Eclipse Public License"
@@ -11,6 +11,19 @@
              :1.7 {:dependencies [[org.clojure/clojure "1.7.0"]]}
              :1.8 {:dependencies [[org.clojure/clojure "1.8.0"]]}
              :1.9 {:dependencies [[org.clojure/clojure "1.9.0"]]}}
+
+  :repositories [["releases" {:sign-releases false
+                              :url "s3p://swirrl-jars/releases/"
+                              :username :env
+                              :passphrase :env
+                              :checksum :ignore
+                              :snapshots false}]
+                 ["snapshots" {:sign-releases false
+                               :url "s3p://swirrl-jars/snapshots/"
+                               :username :env
+                               :passphrase :env
+                               :checksum :ignore
+                               :releases false}]]
 
   :dependencies [[clj-http "2.3.0"]
                  [cheshire "5.6.3"]
